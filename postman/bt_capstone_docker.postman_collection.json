@@ -1,0 +1,461 @@
+{
+	"info": {
+		"_postman_id": "b7b8c1d7-5e2e-41a3-a553-da6e4d44ad3c",
+		"name": "bt_capstone_docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Đăng ký",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ndhoa1904@gmail.com\",\r\n    \"mat_khau\": \"duchoa1904\",\r\n    \"ho_ten\":\"Hoa\",\r\n    \"tuoi\":23,\r\n    \"anh_dai_dien\":\"https://nhattientuu.com/wp-content/uploads/2020/08/hinh-anh-cute-1.jpg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/register",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Đăng nhập",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ndhoa1904@gmail.com\",\r\n    \"mat_khau\":\"duchoa1904\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/login",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách ảnh",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjYsImVtYWlsIjoibmRob2ExOTA0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE9Mdlo5QkdtRzlyMmdMS3laQWlJSS5KWW9KRk84VTZSV0Z6UXc3dEFMSi56YjRub3IvLmVTIiwiaG9fdGVuIjoiSG9hIiwidHVvaSI6MjMsImFuaF9kYWlfZGllbiI6Imh0dHBzOi8vbmhhdHRpZW50dXUuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIwLzA4L2hpbmgtYW5oLWN1dGUtMS5qcGcifSwiaWF0IjoxNjcyMjA2Mjg1LCJleHAiOjE3MDM3NjM4ODV9.QxeLeBGEy3jsEMH3Oilq6GIMUXO8ex4b1lYBimtLkjw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/home/getListImg",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"getListImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy ảnh theo tên tìm kiếm",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjYsImVtYWlsIjoibmRob2ExOTA0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE9Mdlo5QkdtRzlyMmdMS3laQWlJSS5KWW9KRk84VTZSV0Z6UXc3dEFMSi56YjRub3IvLmVTIiwiaG9fdGVuIjoiSG9hIiwidHVvaSI6MjMsImFuaF9kYWlfZGllbiI6Imh0dHBzOi8vbmhhdHRpZW50dXUuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIwLzA4L2hpbmgtYW5oLWN1dGUtMS5qcGcifSwiaWF0IjoxNjcyMjA2Mjg1LCJleHAiOjE3MDM3NjM4ODV9.QxeLeBGEy3jsEMH3Oilq6GIMUXO8ex4b1lYBimtLkjw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dataUpload",
+							"type": "file",
+							"src": "/C:/Users/Hoa/Desktop/background.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/home/getSearchImg/a",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"getSearchImg",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy ảnh theo id và người dùng",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/detail/getInfoImgById/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"getInfoImgById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy bình luận theo id ảnh",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/detail/getCommentById/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"getCommentById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post bình luận",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"5\",\r\n    \"hinh_id\":\"2\",\r\n    \"ngay_binh_luan\":\"2022-12-7\",\r\n    \"noi_dung\":\"Avatar đẹp lắm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/detail/createComment",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"createComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy thông tin người dùng",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hinh_id\":\"4\",\r\n    \"nguoi_dung_id\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/image/getUser/10",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"image",
+						"getUser",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách ảnh đã tạo theo người dùng",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/image/getImgByIdUser/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"image",
+						"getImgByIdUser",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách ảnh đã lưu theo người dùng",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/image/getSaveImgByIdUser/5",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"image",
+						"getSaveImgByIdUser",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xóa ảnh theo id ảnh",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hinh_id\":\"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/image/deleteImgById/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"image",
+						"deleteImgById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm một ảnh của người dùng",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_hinh\":\"Bắn súng\",\r\n    \"duong_dan\":\"https://assets.reedpopcdn.com/codmw2.jfif/BROK/resize/1920x1920%3E/format/jpg/quality/80/codmw2.jfif\",\r\n    \"mo_ta\":\"ảnh đẹp\",\r\n    \"tuoi\":1,\r\n    \"nguoi_dung_id\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/add/postImg",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"add",
+						"postImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cập nhật thông tin người dùng",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ndhoa1904@gmail.com\",\r\n    \"mat_khau\":\"123456\",\r\n    \"ho_ten\":\"Đức Hòa\",\r\n    \"tuoi\":23,\r\n    \"anh_dai_dien\":\"https://nhattientuu.com/wp-content/uploads/2020/08/hinh-anh-cute-1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/update/updateUser/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"update",
+						"updateUser",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy hình ảnh đã lưu hay chưa theo id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjIsImVtYWlsIjoibmRob2ExOUBnbWFpbC5jb20iLCJtYXRfa2hhdSI6IiQyYiQxMCRVd3cyeUxzY3hONDJPbkFpcW5uZ1JlanJCQ2N2SWo0bDlPLzlqeGJoeXB6UlQxc3p0NnRjLiIsImhvX3RlbiI6IkhvYSIsInR1b2kiOjIzLCJhbmhfZGFpX2RpZW4iOiJodHRwczovL25oYXR0aWVudHV1LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC9oaW5oLWFuaC1jdXRlLTEuanBnIn0sImlhdCI6MTY3MDU2OTYwMiwiZXhwIjoxNzAyMTI3MjAyfQ.XyxwGAwZugwZCgTIB5hEbnEz2rXGCr8tqpHjD6Kf1t0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/detail/getImgNotSave/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"detail",
+						"getImgNotSave",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "default"
+		}
+	]
+}

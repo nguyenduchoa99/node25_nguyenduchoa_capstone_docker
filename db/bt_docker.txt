@@ -1,0 +1,54 @@
+CREATE DATABASE bt_docker
+
+USE bt_docker
+
+CREATE TABLE nguoi_dung(
+nguoi_dung_id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(255),
+mat_khau VARCHAR(255),
+ho_ten VARCHAR(255),
+tuoi INT,
+anh_dai_dien VARCHAR(255)
+)
+
+CREATE TABLE hinh_anh(
+hinh_id INT PRIMARY KEY AUTO_INCREMENT,
+ten_hinh VARCHAR(255),
+duong_dan VARCHAR(255),
+mo_ta VARCHAR(255),
+tuoi INT,
+nguoi_dung_id INT,
+FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id)
+)
+
+CREATE TABLE binh_luan(
+nguoi_dung_id INT,
+hinh_id INT,
+ngay_binh_luan DATE,
+FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id),
+FOREIGN KEY (hinh_id) REFERENCES hinh_anh(hinh_id),
+PRIMARY KEY (nguoi_dung_id,hinh_id)
+)
+
+CREATE TABLE luu_anh(
+nguoi_dung_id INT,
+hinh_id INT,
+ngay_luu DATE,
+FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id),
+FOREIGN KEY (hinh_id) REFERENCES hinh_anh(hinh_id),
+PRIMARY KEY(nguoi_dung_id,hinh_id)
+)
+
+INSERT INTO hinh_anh VALUES
+(0,"MW2","https://images.pushsquare.com/7ec14f591d4c0/call-of-duty-modern-warfare-2-ps5-ps4-playstation.large.jpg","oke",1,2)
+
+INSERT INTO binh_luan VALUES
+(2,1,"2022-12-8")
+
+ALTER TABLE binh_luan ADD COLUMN noi_dung VARCHAR(255)
+ALTER TABLE luu_anh ADD COLUMN noi_dung VARCHAR(255)
+
+INSERT INTO luu_anh VALUES
+(2,1,"2022-12-9","anh dep"),
+(2,3,"2022-12-9","codmw2"),
+(3,1,"2022-11-1","avatar")
